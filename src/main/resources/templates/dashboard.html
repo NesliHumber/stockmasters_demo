@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:insert="~{fragments/base :: assetsHead}"></div>
+    <title>Dashboard - StockMasters</title>
+</head>
+
+<body style="display: flex; min-height: 100vh; margin: 0; background-color: #f8f9fa;">
+
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <div style="margin-left: 250px; display: flex; flex-direction: column; flex-grow: 1; width: calc(100% - 250px);">
+        
+        <main style="flex: 1; padding: 30px;">
+            <h2 class="mb-2" style="font-weight: bold;">Dashboard</h2>
+            <p class="text-muted mb-4">Welcome back! Here's what's happening with your inventory.</p>
+
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card text-bg-primary shadow-sm border-0">
+                        <div class="card-body">
+                            <h6 class="card-title">Total Products</h6>
+                            <h2 th:text="${totalProducts}">120</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-bg-success shadow-sm border-0">
+                        <div class="card-body">
+                            <h6 class="card-title">Total Warehouses</h6>
+                            <h2 th:text="${totalCenters}">5</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-bg-danger shadow-sm border-0">
+                        <div class="card-body">
+                            <h6 class="card-title">Low Stock Items</h6>
+                            <h2 th:text="${lowStock}">8</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-bg-dark shadow-sm border-0">
+                        <div class="card-body">
+                            <h6 class="card-title">Stock Value</h6>
+                            <h2>$45,200</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-header bg-white fw-bold">Warehouse Inventory Levels</div>
+                        <div class="card-body d-flex align-items-center justify-content-center bg-light" style="min-height: 200px;">
+                            <div class="text-center text-muted">
+                                <p>[GRAPHIC CHART]</p>
+                                <small>Distribution across 5 centers</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-header bg-white fw-bold">Stock Movement Trend</div>
+                        <div class="card-body d-flex align-items-center justify-content-center bg-light" style="min-height: 200px;">
+                            <div class="text-center text-muted">
+                                <p>[GRAPHIC TREND LINE]</p>
+                                <small>Last 30 days activity</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-header bg-white fw-bold text-danger">Low Stock Alerts</div>
+                        <div class="card-body p-0">
+                            <table class="table table-hover mb-0" style="font-size: 0.9rem;">
+                                <thead class="table-light">
+                                    <tr><th>Item</th><th>Warehouse</th><th>Amount</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Nike Air Max</td><td>Toronto Hub</td><td><span class="badge bg-danger">2</span></td></tr>
+                                    <tr><td>Adidas Runner</td><td>Vancouver</td><td><span class="badge bg-warning text-dark">8</span></td></tr>
+                                    <tr><td>Puma Grip</td><td>Montreal</td><td><span class="badge bg-danger">0</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-header bg-white fw-bold">Recent Stock Transfers</div>
+                        <div class="card-body p-0">
+                            <table class="table table-hover mb-0" style="font-size: 0.9rem;">
+                                <thead class="table-light">
+                                    <tr><th>Item</th><th>From - To</th><th>Status</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Running Shoes</td><td>Toronto - Halifax</td><td><span class="text-success">Completed</span></td></tr>
+                                    <tr><td>Sports Tee</td><td>Calgary - Vancouver</td><td><span class="text-primary">In Transit</span></td></tr>
+                                    <tr><td>Gym Shorts</td><td>Montreal - Toronto</td><td><span class="text-muted">Pending</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div th:replace="~{fragments/footer :: footer}"></div>
+    </div>
+
+    <div th:insert="~{fragments/base :: assetsScripts}"></div>
+</body>
+</html>

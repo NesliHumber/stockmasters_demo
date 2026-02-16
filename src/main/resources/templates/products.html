@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:insert="~{fragments/base :: assetsHead}"></div>
+    <title>Product Catalog - StockMasters</title>
+</head>
+<body style="display: flex; min-height: 100vh; margin: 0; background-color: #f8f9fa;">
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <div style="margin-left: 250px; display: flex; flex-direction: column; flex-grow: 1; width: calc(100% - 250px);">
+        <main style="flex: 1; padding: 30px;">
+            <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+                <div>
+                    <h2 style="font-weight: bold; margin: 0;">Product Catalog</h2>
+                </div>
+                
+                <div style="flex-grow: 1; max-width: 500px; margin: 0 40px;">
+                    <div class="input-group shadow-sm">
+                        <span class="input-group-text bg-white border-end-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search text-muted" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
+                        </span>
+                        <input type="text" class="form-control border-start-0 ps-0" placeholder="Search products by name, SKU or brand..." aria-label="Search">
+                    </div>
+                </div>
+
+                <a class="btn btn-dark shadow-sm px-4" th:href="@{/products/new}">+ Add Product</a>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div style="height: 180px; background-color: #e9ecef; display: flex; align-items: center; justify-content: center; color: #adb5bd;">[Image]</div>
+                        <div class="card-body">
+                            <small class="text-muted">PROD-001</small>
+                            <h5 class="card-title fw-bold">Wireless Mouse</h5>
+                            <p class="text-muted small">TechGear • Electronics</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <strong>$24.99</strong>
+                                <span class="badge bg-success">249 in stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </main>
+        <div th:replace="~{fragments/footer :: footer}"></div>
+    </div>
+    <div th:insert="~{fragments/base :: assetsScripts}"></div>
+</body>
+</html>

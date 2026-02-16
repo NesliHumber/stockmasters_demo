@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:insert="~{fragments/base :: assetsHead}"></div>
+    <title>Login - StockMasters</title>
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center" style="height: 100vh; margin: 0;">
+    <div class="card shadow" style="width: 400px;">
+        <div class="card-header text-center"><h4>StockMasters Login</h4></div>
+        <div class="card-body">
+            <form th:action="@{/login}" method="post">
+                <div class="mb-3"><label>Email</label><input type="text" name="username" class="form-control"/></div>
+                <div class="mb-3"><label>Password</label><input type="password" name="password" class="form-control"/></div>
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
