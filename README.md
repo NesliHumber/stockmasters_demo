@@ -16,7 +16,7 @@ The platform provides a centralized dashboard for monitoring Key Performance Ind
 ---
 
 ## 📂 Project Structure
-
+```bash
 my-spring-app/
 ├── 📁 src/
 │   ├── 📁 main/
@@ -34,6 +34,7 @@ my-spring-app/
 │   └── 📁 test/                             # Unit & Integration Tests
 ├── 📄 pom.xml                               # Maven Dependencies
 └── 📄 README.md                             # Documentation
+```
 
 ---
 
