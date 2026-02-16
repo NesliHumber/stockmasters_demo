@@ -5,6 +5,14 @@
 
 The platform provides a centralized dashboard for monitoring Key Performance Indicators (KPIs) and managing distribution centers across regional hubs.
 
+Key Features
+
+**KPI Dashboard**: Four high-level cards displaying Total Products, Total Warehouses, Low Stock Items, and Total Stock Value.
+**Data Visualization**: Graphical charts for warehouse inventory levels and 30-day stock movement trends.
+Multi-Location Management: Regional overview of centers with capacity monitoring and manager metadata.
+**Inventory Control**: A structured grid for tracking SKU, product health, and performing in-line stock transfers.
+**Product Catalog**: Card-based system featuring dynamic search by name, SKU, or brand.
+
 ---
 
 ## 👥 Meet the Team
