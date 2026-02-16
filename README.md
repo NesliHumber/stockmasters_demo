@@ -15,6 +15,28 @@ The platform provides a centralized dashboard for monitoring Key Performance Ind
 
 ---
 
+## 📂 Project Structure
+
+my-spring-app/
+├── 📁 src/
+│   ├── 📁 main/
+│   │   ├── 📁 java/com/example/project/
+│   │   │   ├── 📄 ProjectApplication.java   # Entry point
+│   │   │   ├── 📁 controller/               # API Endpoints
+│   │   │   ├── 📁 service/                  # Business Logic
+│   │   │   ├── 📁 repository/               # Data Access
+│   │   │   ├── 📁 model/                    # Entities & DTOs
+│   │   │   └── 📁 config/                   # Configuration Beans
+│   │   └── 📁 resources/
+│   │       ├── 📁 static/                   # CSS/JS/Images
+│   │       ├── 📁 templates/                # HTML Templates
+│   │       └── 📄 application.yml           # App Config
+│   └── 📁 test/                             # Unit & Integration Tests
+├── 📄 pom.xml                               # Maven Dependencies
+└── 📄 README.md                             # Documentation
+
+---
+
 ## 🚀 Key Features
 * **KPI Dashboard**: Four high-level cards displaying Total Products, Total Warehouses, Low Stock Items, and Total Stock Value.
 * **Data Visualization**: Graphical charts for warehouse inventory levels and 30-day stock movement trends.
@@ -41,5 +63,17 @@ The platform provides a centralized dashboard for monitoring Key Performance Ind
 ### Installation & Launch
 1. **Clone the repository:**
    ```bash
-   git clone [your-repository-link]
+   git clone https://github.com/NesliHumber/stockmasters_demo.git
    cd stockmasters
+
+2. **Build the Project: Use the Maven wrapper to install dependencies and compile the code**
+   ```bash
+   ./mvnw clean install
+
+3. **Run the Application: Start the Spring Boot server:**
+   ```bash
+   ./mvnw spring-boot:run
+
+4. **Access the Dashboard: Once the terminal shows "Started ProjectApplication," open your browser and navigate to:**
+   ```bash
+   http://localhost:8080

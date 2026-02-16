@@ -46,5 +46,10 @@ public class HomeController {
         public String centers() {
             return "centers";
         }
+
+    @GetMapping("/analytics")
+        public String analytics() {
+            return "analytics";
+        }
     }
 

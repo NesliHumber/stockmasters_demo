@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:insert="~{fragments/base :: assetsHead}"></div>
+    <title>Analytics & Reports - StockMasters</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="display: flex; min-height: 100vh; margin: 0; background-color: #f8f9fa;">
+
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <div style="margin-left: 250px; display: flex; flex-direction: column; flex-grow: 1; width: calc(100% - 250px);">
+        
+        <main style="flex: 1; padding: 30px;">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h2 style="font-weight: bold; margin: 0;">Analytics & Reports</h2>
+                <select class="form-select" style="width: auto;">
+                    <option>Last 30 days</option>
+                    <option>Last 6 months</option>
+                    <option>Year to date</option>
+                </select>
+            </div>
+            <p class="text-muted mb-4">Insights and performance metrics across your inventory</p>
+
+            <div class="row g-4 mb-4">
+                <div class="col-md-3">
+                    <div class="card h-100 shadow-sm border-0 p-3">
+                        <div class="d-flex justify-content-between">
+                            <div class="p-2 bg-primary bg-opacity-10 rounded text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                                    <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.051zm1.591 2.103c1.39.364 2.007.908 2.007 1.746 0 1.112-.896 1.858-2.007 2.001V8.621l.2.048z"/>
+                                </svg>
+                            </div>
+                            <span class="text-success fw-bold">↗ +8.2%</span>
+                        </div>
+                        <h2 class="mt-3 mb-1 fw-bold">$2.4M</h2>
+                        <small class="text-muted">Total Inventory Value</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow-sm border-0 p-3">
+                        <div class="d-flex justify-content-between">
+                            <div class="p-2 bg-success bg-opacity-10 rounded text-success">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.5h-3.5a.5.5 0 0 1-.5-.5z"/>
+                                    <path fill-rule="evenodd" d="M7.646 8.854a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L11 6.207 8.354 8.854a.5.5 0 0 1-.708 0z"/>
+                                </svg>
+                            </div>
+                            <span class="text-success fw-bold">↗ +5.3%</span>
+                        </div>
+                        <h2 class="mt-3 mb-1 fw-bold">4.9x</h2>
+                        <small class="text-muted">Stock Turnover Rate</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow-sm border-0 p-3">
+                        <div class="d-flex justify-content-between">
+                            <div class="p-2 bg-info bg-opacity-10 rounded text-info">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
+                                    <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+                                </svg>
+                            </div>
+                            <span class="text-success fw-bold">↗ +12.5%</span>
+                        </div>
+                        <h2 class="mt-3 mb-1 fw-bold">12,345</h2>
+                        <small class="text-muted">Active Products</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow-sm border-0 p-3">
+                        <div class="d-flex justify-content-between">
+                            <div class="p-2 bg-danger bg-opacity-10 rounded text-danger">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-graph-down-arrow" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 11.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-1 0v3.5h-3.5a.5.5 0 0 0-.5.5z"/>
+                                    <path fill-rule="evenodd" d="M7.646 6.146a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L11 8.793 8.354 6.146a.5.5 0 0 0-.708 0z"/>
+                                </svg>
+                            </div>
+                            <span class="text-danger fw-bold">↘ -15.6%</span>
+                        </div>
+                        <h2 class="mt-3 mb-1 fw-bold">147</h2>
+                        <small class="text-muted">Low Stock Alerts</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <div class="col-md-8">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-white fw-bold border-0 pt-3">Inventory Value Trend</div>
+                        <div class="card-body">
+                            <canvas id="valueTrendChart" style="max-height: 300px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-white fw-bold border-0 pt-3">Inventory by Category</div>
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <canvas id="categoryPieChart" style="max-height: 250px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-white fw-bold border-0 pt-3">Warehouse Performance (Inbound vs Outbound)</div>
+                        <div class="card-body">
+                            <canvas id="warehouseBarChart" style="max-height: 300px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-white fw-bold border-0 pt-3">Top Moving Products</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+                                    <div class="d-flex align-items-center">
+                                        <span class="badge rounded-circle bg-light text-dark me-3 p-2" style="width: 35px;">1</span>
+                                        <div>
+                                            <h6 class="mb-0">Wireless Mouse</h6>
+                                            <small class="text-muted">1,245 units sold</small>
+                                        </div>
+                                    </div>
+                                    <span class="text-success">↗ +23%</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+                                    <div class="d-flex align-items-center">
+                                        <span class="badge rounded-circle bg-light text-dark me-3 p-2" style="width: 35px;">2</span>
+                                        <div>
+                                            <h6 class="mb-0">USB-C Cable</h6>
+                                            <small class="text-muted">1,089 units sold</small>
+                                        </div>
+                                    </div>
+                                    <span class="text-success">↗ +18%</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+                                    <div class="d-flex align-items-center">
+                                        <span class="badge rounded-circle bg-light text-dark me-3 p-2" style="width: 35px;">3</span>
+                                        <div>
+                                            <h6 class="mb-0">Mechanical Keyboard</h6>
+                                            <small class="text-muted">956 units sold</small>
+                                        </div>
+                                    </div>
+                                    <span class="text-success">↗ +15%</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div th:replace="~{fragments/footer :: footer}"></div>
+    </div>
+
+    <div th:insert="~{fragments/base :: assetsScripts}"></div>
+
+    <script>
+        // Inventory Value Trend Chart
+        new Chart(document.getElementById('valueTrendChart'), {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Value ($M)',
+                    data: [2.1, 2.3, 2.2, 2.4, 2.35, 2.5],
+                    borderColor: '#0d6efd',
+                    backgroundColor: 'rgba(13, 110, 253, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 5
+                }]
+            },
+            options: { plugins: { legend: { display: false } } }
+        });
+
+        // Category Pie Chart
+        new Chart(document.getElementById('categoryPieChart'), {
+            type: 'pie',
+            data: {
+                labels: ['Electronics', 'Furniture', 'Accessories', 'Lighting'],
+                datasets: [{
+                    data: [45, 28, 18, 9],
+                    backgroundColor: ['#4e73df', '#1cc88a', '#f6c23e', '#e74a3b']
+                }]
+            },
+            options: { plugins: { legend: { position: 'bottom' } } }
+        });
+
+        // Warehouse Performance Chart
+        new Chart(document.getElementById('warehouseBarChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Eastern Canada Hub', 'Pacific Gateway', 'Quebec Logistics Center'],
+                datasets: [
+                    { label: 'Inbound', data: [4200, 3100, 2500], backgroundColor: '#1cc88a' },
+                    { label: 'Outbound', data: [3800, 2900, 2100], backgroundColor: '#e74a3b' }
+                ]
+            },
+            options: { scales: { y: { beginAtZero: true } } }
+        });
+    </script>
+</body>
+</html>
